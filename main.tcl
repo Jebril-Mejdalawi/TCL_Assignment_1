@@ -1,7 +1,3 @@
-
-
-
-
 proc mergeSort {numList} {
     set length [llength $numList]
     if { $length <= 1} {
