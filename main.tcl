@@ -5,27 +5,32 @@
 proc mergeSort {numList} {
     set length [llength $numList]
     if { $length <= 1} {
-        #return $numList
-        return 0
+        return $numList
     }
-
     set mid [expr $length / 2]
     set left [lrange $numList 0 [expr $mid - 1]]
-    set right [lrange $numList $mid $length-1]
+    set right [lrange $numList $mid end]
     return [merge [mergeSort $left] [mergeSort $right]]
 
-    #testing values
-    if 0 {
-    puts $mid
-    puts $left
-    puts $right
-    }
-  
 }
 
-proc merge { left , right} {
-    set result {}
-    result
+proc merge { left  right} {
+   set result {}
+    while { [llength $left] > 0 && [llength $right] > 0 } {
+        if {[ lindex $left 0] < [lindex $right 0 ]} {
+            lappend result [ lindex $left 0] 
+            set left [lreplace $left 0 0]
+        } else {
+             lappend result [ lindex $right 0] 
+            set right [lreplace $right 0 0]
+        }
+    }
+    
+      lappend result {*}$left
+      lappend result {*}$right
+      return $result
+
+    #return [concat $result $left $right]
 }
 
 
@@ -44,6 +49,10 @@ foreach li $nList {
 puts "\v-----------------------------------------------------------------------\v"
 
 
-puts [mergeSort $nList]
+set sortedList [mergeSort $nList]
 
+foreach i $sortedList {
+    puts $i
 }
+
+}   
