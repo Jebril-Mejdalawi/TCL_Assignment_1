@@ -12,7 +12,7 @@ proc mergeSort {numList} {
     set mid [expr $length / 2]
     set left [lrange $numList 0 [expr $mid - 1]]
     set right [lrange $numList $mid $length-1]
-    return merge mergeSort $left mergeSort $right
+    return [merge [mergeSort $left] [mergeSort $right]]
 
     #testing values
     if 0 {
@@ -24,7 +24,8 @@ proc mergeSort {numList} {
 }
 
 proc merge { left , right} {
-    
+    set result {}
+    result
 }
 
 
