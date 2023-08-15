@@ -9,4 +9,17 @@ The list reserves 10 bytes of memory, each number reserves one byte.
 Write a TCL procedure, which takes this list as an argument, and returns the list sorted in ascending order with a minimum number of iterations.
 NOTE: Don't use TCL built-in sort function."
 
-3- I wrote initial code.
+3- I wrote initial code to take the list from user as input (string) and then parse it using list split.
+
+4- I tested the list using the sort command to make sure it's ready to be sorted.
+
+5- I started thinking of a suitable algorithm and found that bubble sort, quick sort and merge sort are considerable choices.
+
+6- I decided on MergeSort since it's the fastest and most consistant time complixity of the compare based sorting algorithms --> O(n*Logn)
+
+7- I wrote a pseude code on a planner.
+
+8- I converted the pseude code into a TCL code (which was the most challenging step for me since it's my first time using this language.
+
+9 I debugged and tested the code and it does work.
+
